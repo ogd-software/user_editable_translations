@@ -1,0 +1,59 @@
+# Regels voor organisatie en naamgeving van translation keys:
+#
+# - Woorden gescheiden door underscores.
+# - Alle letters lowercase. Alleen voor property names met een hoofdletter wordt een uitzondering gemaakt.
+# - Keys zijn in het Engels.
+# - Categorieën gescheiden door punten (wordt al door Rails afgedwongen).
+#
+# Keys moeten een van de volgende conventies volgen voor de onderverdeling in categorieën:
+#
+#  1 general
+#  2 activerecord.attributes.class_name.attribute_name
+#  3 errors
+#  4 model.[action].property
+#  5 devise
+#  6 ...(andere third party libraries)
+#
+# - `general` is een applicatiebrede categorie, bijvoorbeeld namen van buttons of yes/no.
+# - `activerecord` en `errors` zijn een Rails-specifieke constructie: dit zijn de Active Record-validatiemeldingen.
+#   Zie http://guides.rubyonrails.org/i18n.html#translations-for-active-record-models
+#   - `activerecord.attributes` wordt ook gebruikt door onze eigen views.
+#     Plaats nieuwe translations voor attribute names in `activerecord.attributes`, niet in `model.property`.
+# - `action` is optioneel en verwijst naar de pagina, bijvoorbeeld `show` of `edit`.
+# - Keys zonder action, dus van de vorm model.property, kunnen op meerdere pagina's gebruikt worden.
+# - Strings uit devise en andere third party libraries die door de klant aan te passen moeten zijn, krijgen een eigen top-level categorie.
+#
+# Voorbeelden:
+# - general.yes
+# - general.buttons.cancel
+# - activerecord.attributes.organization.orgCode
+# - errors.messages.blank
+# - organization.name
+# - organization.index.title
+# - organization.show.title
+# - organization.search.entry_year
+
+en:
+  translation:
+    display_name: "Translation"
+    locale: "Locale"
+    key: "Key"
+    value: "Value"
+    edited_by_user: "Edited"
+    menu: "Translations"
+    index:
+      title: "Translations"
+    show:
+      title: "Translation"
+nl:
+  translation:
+    display_name: "Vertaling"
+    locale: "Taalregio"
+    key: "Sleutel"
+    value: "Waarde"
+    edited_by_user: "Aangepast"
+    menu: "Vertalingen"
+    index:
+      title: "Vertalingen"
+    show:
+      title: "Vertaling"
